@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to BBCode</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <style>
+        .container {
+            max-width: 960px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Markdown to BBCode</h1>
+        <p>This thing converts Markdown into Steam-readable BBCode without any funny business. You can even use <c>#</c> for headers, unlike all the other pages I found that claim to do this. It even supports lists. I promise I won't sell your data, either. This is a static page.</p>
+
+        <h2>Paste your input</h2>
+        <textarea id="input" rows="8" cols="100"></textarea>
+
+        <h2>Get your output</h2>
+        <textarea id="output" rows="8" cols="100" readonly></textarea>
+
+        <script src="doit.js"></script>
+    </div>
+</body>
