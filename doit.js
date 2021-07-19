@@ -16,8 +16,24 @@ rules.set(/~~(.*)~~/g, `[strike]$1[/strike]`);
 rules.set(/^---/gm, `[hr][/hr]`);
 rules.set(/^\*\*\*/gm, `[hr][/hr]`);
 rules.set(/^___/gm, `[hr][/hr]`);
-
-// TODO lists and more
+// links
+rules.set(/\[([^\]]+)\]\(([^)]+)\)/g, `[url=$1]$2[/url]`);
+// code
+rules.set(/```([^`]+)```/g, `[code]$1[/code]`);
+rules.set(/``([^`]+)``/g, `[code]$1[/code]`);
+rules.set(/`([^`]+)`/g, `[code]$1[/code]`);
+rules.set(/\n\[\/code\]/g, `[/code]`);
+// quotes
+rules.set(/^ *> *(.*)/gm, `[quote]$1[/quote]`);
+rules.set(/\[\/quote\] *\n\[quote\]/g, `\n`);
+// unordered lists
+rules.set(/^ *- *(.*)/gm, `[list][*] $1[/list]`);
+rules.set(/^ *\* *(.*)/gm, `[list][*] $1[/list]`);
+rules.set(/^ *\+ *(.*)/gm, `[list][*] $1[/list]`);
+rules.set(/\[\/list\] *\n\[list\]/g, `\n`);
+// ordered lists
+rules.set(/^ *\d+\. *(.*)/gm, `[olist][*] $1[/olist]`);
+rules.set(/\[\/olist\] *\n\[olist\]/g, `\n`);
 
 $("#input").on("input", function () {
     let text = $(this).val();
