@@ -17,7 +17,7 @@ rules.set(/^---/gm, `[hr][/hr]`);
 rules.set(/^\*\*\*/gm, `[hr][/hr]`);
 rules.set(/^___/gm, `[hr][/hr]`);
 // links
-rules.set(/\[([^\]]+)\]\(([^)]+)\)/g, `[url=$1]$2[/url]`);
+rules.set(/\[([^\]]+)\]\(([^)]+)\)/g, `[url=$2]$1[/url]`);
 // code
 rules.set(/```([^`]+)```/g, `[code]$1[/code]`);
 rules.set(/``([^`]+)``/g, `[code]$1[/code]`);
