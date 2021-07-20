@@ -19,9 +19,9 @@ rules.set(/^___/gm, `[hr][/hr]`);
 // links
 rules.set(/\[([^\]]+)\]\(([^)]+)\)/g, `[url=$2]$1[/url]`);
 // code
-rules.set(/```([^`]+)```/g, `[code]$1[/code]`);
-rules.set(/``([^`]+)``/g, `[code]$1[/code]`);
-rules.set(/`([^`]+)`/g, `[code]$1[/code]`);
+rules.set(/```[ \n]*([^`]+)```/g, `[code]$1[/code]`);
+rules.set(/``[ \n]*([^`]+)``/g, `[code]$1[/code]`);
+rules.set(/`[ \n]*([^`]+)`/g, `[code]$1[/code]`);
 rules.set(/\n\[\/code\]/g, `[/code]`);
 // quotes
 rules.set(/^ *> *(.*)/gm, `[quote]$1[/quote]`);
